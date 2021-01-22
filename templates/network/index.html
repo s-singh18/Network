@@ -1,0 +1,52 @@
+{% extends "network/layout.html" %} 
+{% load static %} 
+
+{% block body %}
+  
+    {% if user.is_authenticated %}
+        <div id="page-title">
+        </div>
+
+        <!-- New Post -->
+        <div id="new-post">
+        </div>
+        <input type="hidden" id="current-username" value="{{ user.username }}">
+
+        <!-- <form id="post-form">
+            <div class="form-group">
+                <input autofocus class="form-control" id="post-text" type="text">
+            </div>
+            <input type="hidden" id="post-author" value="{{ user.username }}">
+            <input class="btn btn-primary" type="submit" value="Post">
+        </form> -->
+    
+        <hr>
+
+        <!-- All Posts -->
+        <div id="posts-view">
+        </div>
+        <!-- {% for post in posts %}
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card">
+                    <div class="card-body">
+                        <a class="card-title" href="{% url 'profile' post.author.username %}"><h5>{{ post.author.username }}</h5></a>
+                        <h6 class="card-subtitle" id="timestamp"> {{ post.timestamp }}</h6>
+                        <p class="card-text" id="text"> {{ post.text }} </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %} -->
+
+
+        <div id="page-nav">
+        </div>
+        
+    {% endif %}
+
+    
+   
+{% endblock %} 
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
+{% endblock %}

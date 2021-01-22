@@ -1,0 +1,25 @@
+#page-title {
+    style: align-center;
+}
+
+.btn btn-secondary btn-sm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+}
+
+/* .like-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr
+  } */
+
+.like-count {
+    /* display: inline-block; */
+    /* float: left; */
+}
+
+.like-button {
+    /* display: inline-block; */
+    /* float: left; */
+}

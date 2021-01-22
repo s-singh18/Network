@@ -1,0 +1,40 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <!-- User Posts -->
+        <hr>
+        <div class="profile" style="text-align: center;">
+            <h1 id="username">{{ user_profile.username }}</h1>
+            <button type="button"></button>
+        </div>
+        
+        <!-- Add followers and following amounts -->
+        
+        <hr>
+        <!-- Display user posts -->
+        {% for post in posts %}
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id="username"> {{ post.author.username }} </h6>
+                        <h6 class="card-subtitle" id="timestamp"> {{ post.timestamp }}</h6>
+                        <p class="card-text" id="text"> {{ post.text }} </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        
+    
+    {% endif %}
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/profile.js' %}"></script>
+    <!-- <script src="{% static 'network/index.js' %}"></script>
+    -->
+{% endblock %}
+
